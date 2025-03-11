@@ -3,38 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Love You 😞 Mohini</title>
+    <title>Protected Page</title>
     <style>
-        body { background-color: black; color: white; text-align: center; font-family: Arial, sans-serif; }
-        h1 { color: red; }
-        iframe { margin: 10px; border-radius: 10px; }
+        body { font-family: Arial, sans-serif; text-align: center; background-color: black; color: white; display: none; }
+        .password-container { margin-top: 100px; }
+        input, button { padding: 10px; margin: 5px; width: 80%; }
+        button { background-color: red; color: white; border: none; cursor: pointer; }
     </style>
 </head>
-<body>
-    <h1>I Love You 😞 Mohini</h1>
-    <p>🎵 Watch Your Favorite Songs Below 🎵</p>
+<body id="mainContent">
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/4fNW4W48b60" frameborder="0" allowfullscreen></iframe>
-    <p>🎶 Tum Hi Aana - Jubin Nautiyal</p>
+    <div class="password-container" id="passwordScreen">
+        <h2>🔒 Enter Password</h2>
+        <input type="password" id="passwordInput" placeholder="Enter Password"><br>
+        <button onclick="checkPassword()">Submit</button>
+    </div>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/LgVi6y5Q-qM" frameborder="0" allowfullscreen></iframe>
-    <p>🎶 Raataan Lambiyan - Jubin Nautiyal & Asees Kaur</p>
+    <div id="content" style="display: none;">
+        <h1>Welcome to I Love You 😞 Mohini</h1>
+        <p>🎵 Watch Your Favorite Songs Below 🎵</p>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/5wBTdfAkqGU" frameborder="0" allowfullscreen></iframe>
-    <p>🎶 Meri Adhuri Kahani - Arijit Singh</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5wBTdfAkqGU" frameborder="0" allowfullscreen></iframe>
+        <p>🎶 Meri Adhuri Kahani - Arijit Singh</p>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/jCQ_5GjJIVg" frameborder="0" allowfullscreen></iframe>
-    <p>🎶 Tera Ban Jaunga - Kabir Singh</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LgVi6y5Q-qM" frameborder="0" allowfullscreen></iframe>
+        <p>🎶 Raataan Lambiyan - Jubin Nautiyal & Asees Kaur</p>
+    </div>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/hHGeRHChlh0" frameborder="0" allowfullscreen></iframe>
-    <p>🎶 Dil Dhadakne Do - Zindagi Na Milegi Dobara</p>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("passwordInput").value;
+            if (password === "Heartbreak💔💔") {
+                document.getElementById("passwordScreen").style.display = "none";
+                document.getElementById("content").style.display = "block";
+                document.body.style.display = "block";
+            } else {
+                alert("❌ Incorrect Password! Try Again.");
+            }
+        }
+        
+        // Hide content initially
+        document.body.style.display = "block";
+        document.getElementById("content").style.display = "none";
+    </script>
 
-    <h3>Enter Your Details</h3>
-    <form>
-        <input type="text" placeholder="Full Name" required><br><br>
-        <input type="email" placeholder="Email" required><br><br>
-        <input type="tel" placeholder="Phone Number" required><br><br>
-        <button type="submit">Submit</button>
-    </form>
 </body>
-</html>#2F00FF
+</html>
