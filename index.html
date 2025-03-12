@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protected Page</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: black; color: white; display: none; }
+        body { font-family: Arial, sans-serif; text-align: center; background-color: black; color: white; }
         .password-container { margin-top: 100px; }
-        input, button { padding: 10px; margin: 5px; width: 80%; }
-        button { background-color: red; color: white; border: none; cursor: pointer; }
+        input { padding: 10px; width: 80%; font-size: 16px; }
+        button { padding: 10px; background-color: red; color: white; border: none; cursor: pointer; font-size: 16px; }
     </style>
 </head>
-<body id="mainContent">
+<body>
 
     <div class="password-container" id="passwordScreen">
         <h2>🔒 Enter Password</h2>
-        <input type="password" id="passwordInput" placeholder="Enter Password"><br>
+        <input type="password" id="passwordInput" placeholder="Enter Password"><br><br>
         <button onclick="checkPassword()">Submit</button>
     </div>
 
@@ -32,19 +32,17 @@
 
     <script>
         function checkPassword() {
-            var password = document.getElementById("passwordInput").value;
-            if (password === "Heartbreak💔💔") {
+            var password = document.getElementById("passwordInput").value.trim();
+            var correctPassword = "Heartbreak💔💔";
+
+            if (password === correctPassword) {
                 document.getElementById("passwordScreen").style.display = "none";
                 document.getElementById("content").style.display = "block";
-                document.body.style.display = "block";
             } else {
-                alert("❌ Incorrect Password! Try Again.");
+                alert("❌ Wrong Password! Try Again.");
+                document.getElementById("passwordInput").value = "";
             }
         }
-        
-        // Hide content initially
-        document.body.style.display = "block";
-        document.getElementById("content").style.display = "none";
     </script>
 
 </body>
